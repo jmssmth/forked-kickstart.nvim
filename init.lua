@@ -99,13 +99,18 @@ vim.g.maplocalleader = ' '
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
+
+-- see settings here: https://neovim.io/doc/user/options.html#'tabstop'
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.noexpandtab = true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -207,7 +212,7 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
+-- [[ Configure and install plugins ]] ===============================================
 --
 --  To check the current status of your plugins, run
 --    :Lazy
